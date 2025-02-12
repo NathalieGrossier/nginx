@@ -1,0 +1,19 @@
+# ceci est un commentaire
+services:
+  monnginx:
+    build: ./front
+    ports:
+      - '8001:80'
+    volumes:
+      - ./front/app:/usr/share/nginx/html
+    environment:
+      - MYSQL_PASSWORD=${PASSWORD}
+    # volumes:
+    #     - type: volume
+    #       source: mes_datas
+    #   # - type: bind
+    #   #   source: ./front/app
+    #       target: /usr/share/nginx/html
+
+# volumes: 
+#   mes_datas:
